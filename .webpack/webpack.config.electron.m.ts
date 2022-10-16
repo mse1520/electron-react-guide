@@ -2,7 +2,7 @@
 import path from 'path';
 import { Configuration as WebpackConfiguration, EnvironmentPlugin } from 'webpack';
 
-const IS_DEV = process.env.NODE_ENV === 'dev';
+const IS_DEV = process.env.NODE_ENV === 'development';
 
 function createConfig(target: string): WebpackConfiguration {
   return {

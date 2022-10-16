@@ -4,8 +4,7 @@ import { Configuration as WebpackConfiguration, EnvironmentPlugin } from 'webpac
 import { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-const IS_DEV = process.env.NODE_ENV === 'dev';
-console.log(IS_DEV);
+const IS_DEV = process.env.NODE_ENV === 'development';
 
 interface WebpackConfig extends WebpackConfiguration {
   devServer: DevServerConfiguration
@@ -35,7 +34,7 @@ const config: WebpackConfig = {
   output: {
     path: path.resolve('dist'),
     filename: '[name].js',
-    clean: true,
+    clean: IS_DEV ? true : false,
   },
   // loader 설정
   module: {
@@ -57,7 +56,7 @@ const config: WebpackConfig = {
       meta: {
         'Content-Security-Policy': {
           'http-equiv': 'Content-Security-Policy',
-          content: IS_DEV ? `default-src * 'unsafe-eval' 'unsafe-inline';` : `default-src 'self';`
+          content: IS_DEV ? `default-src * 'unsafe-eval' 'unsafe-inline';` : `default-src 'self' 'unsafe-inline';`
         }
       }
     })

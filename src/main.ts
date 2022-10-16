@@ -12,7 +12,7 @@ function createWindow() {
     }
   });
 
-  IS_DEV ? win.loadURL('http://localhost:4005') : win.loadFile('index.html');
+  IS_DEV ? win.loadURL('http://localhost:4005') : win.loadFile(path.join(__dirname, 'index.html'));
 }
 
 function initApi() {

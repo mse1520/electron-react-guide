@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import { lazy, Suspense } from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
 const Home = lazy(() => import(/* webpackChunkName: 'Home' */ '@pages/Home'));
@@ -18,13 +18,13 @@ html, body, #root {
 function App() {
   return <>
     <GlobalStyle />
-    <HashRouter>
+    <MemoryRouter>
       <Suspense fallback={<div>loading...</div>}>
         <Routes>
           <Route path='/' element={<Home />} />
         </Routes>
       </Suspense>
-    </HashRouter>
+    </MemoryRouter>
   </>;
 }
 

@@ -12,8 +12,10 @@ react는 사용자 인터페이스를 만들기 위한 패키지입니다
 npm i react react-dom react-router-dom styled-components
 
 3. electron
-npm i -D electron
+npm i -D electron @electron-forge/cli
 electron은 데스크탑 앱을 만드는 프레임워크입니다
+  - 'electron'은 데스크탑 앱을 만드는 프레임워크 패키지입니다
+  - '@electron-forge/cli'은 앱을 배포하는데 필요한 패키지입니다
 
 4. webpack 설치하기
 npm i -D webpack webpack-cli
