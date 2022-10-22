@@ -1,10 +1,11 @@
 {
   "name": "electron-react-guide",
-  "main": "./dist/main.js",
   "version": "1.0.0",
   "description": "This is guide for electron and react",
+  "author": "kyh",
+  "license": "MIT",
+  "main": "./dist/main.js",
   "scripts": {
-    "test": "npx cross-env NODE_ENV=development webpack serve",
     "dev": "cross-env NODE_ENV=development concurrently \"npm run bundle-renderer\" \"npm run bundle-electron\" \"npm run electron\"",
     "build": "webpack && webpack --config ./.webpack/webpack.config.electron.ts && npm run make",
     "bundle-renderer": "webpack serve",
@@ -14,8 +15,6 @@
     "start": "electron-forge start",
     "package": "electron-forge package"
   },
-  "author": "kyh",
-  "license": "MIT",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "react": "^18.2.0",

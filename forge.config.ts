@@ -5,7 +5,7 @@ const include = ['node_modules', 'dist', 'package.json'];
 const ignore = rootDirs.filter(dir => !include.includes(dir));
 
 export const packagerConfig = {
-  ignore: [...ignore, 'forge.config.js'],
+  ignore: [...ignore, 'forge.config.js', /\.map$/],
   asar: true
 };
 export const makers = [
